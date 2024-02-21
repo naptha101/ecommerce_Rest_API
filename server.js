@@ -16,7 +16,7 @@ app.use(cors());
 
 // Server startup **after successfully connecting to the database**
 mongoose.connection.once('open', () => {
-  const port = process.env.PORT || 3000;
+  const port = process.env.PORT || 5000;
   app.listen(port, () => console.log(`Server listening on port ${port}`));
 });
 
@@ -32,3 +32,7 @@ app.use((err, req, res, next) => {
   console.error('Server error:', err);
   res.status(500).json({ error: 'Something went wrong' });
 });
+
+
+
+
