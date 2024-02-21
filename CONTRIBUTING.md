@@ -1,4 +1,4 @@
-# Contributing to [ecommerce_Rest_API]
+# Contributing to ecommerce_Rest_API
 
 Thank you for considering contributing to our project! We welcome contributions from the community to help improve and expand this e-commerce REST API.
 
@@ -35,5 +35,5 @@ If you encounter any issues, have questions, or need assistance, please open an 
 
 We value and appreciate all contributions to this project. Contributors will be acknowledged and credited in the project's documentation and GitHub repository.
 
-Thank you for contributing to [ecommerce_Rest_API]!
+Thank you for contributing to ecommerce_Rest_API.
 
