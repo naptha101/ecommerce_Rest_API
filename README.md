@@ -24,7 +24,7 @@
 - Ideal for developers, learners, and creating unique e-commerce solutions.
 
 ## Getting Started
-1. **Clone the repository:** `git clone https://github.com/your-username/ecommerce-api.git`
+1. **Clone the repository:** `git clone https://github.com/Marzooq13579/ecommerce_Rest_API.git`
 2. **Install dependencies:** `npm install`
 3. **Configure:**
    - Create a `.env` file with database and Stripe credentials.
