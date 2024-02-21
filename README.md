@@ -29,7 +29,7 @@
 3. **Configure:**
    - Create a `.env` file with database and Stripe credentials.
    - Set environment variables based on the `.env.example` file.
-4. **Run the server:** `npm start`
+4. **Run the dev server:** `npm run dev`
 
 ## Further Resources
 - **Detailed Documentation:** Refer to the individual files and comments within the project for more detailed information and usage instructions.
