@@ -1,0 +1,29 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Environment variables
+.env
+
+# Test coverage reports
+coverage/
+
+# Logs
+logs/
+
+# IDE specific files
+.idea/
+.vscode/
+
+# Temporary files
+tmp/
+
+# Local databases
+mongod.lock
+
+# Dependency lock files
+package-lock.json
+yarn.lock

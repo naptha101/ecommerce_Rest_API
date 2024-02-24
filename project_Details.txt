@@ -1,0 +1,114 @@
+
+//Project Directory
+.
+├── config/
+│   ├── database.js     # Database connection configuration
+│   └── stripe.js       # Stripe API key and configuration (optional)
+├── models/
+│   ├── User.js         # User schema with authentication fields
+│   ├── Product.js       # Product schema with images and categories
+│   ├── Category.js     # Category schema (optional)
+│   ├── CartItem.js      # Cart item schema with user and product references
+│   ├── Order.js        # Order schema with payment details and shipping information
+│   └── Address.js      # Address schema for both users and orders (optional)
+├── routes/
+│   ├── users.js          # User authentication and management routes
+│   ├── products.js       # Product CRUD (Create, Read, Update, Delete) routes
+│   ├── categories.js    # Category CRUD routes (optional)
+│   ├── cart.js          # Cart management (add, remove, update) routes
+│   ├── orders.js        # Order creation and fulfillment routes
+│   └── payments.js      # Stripe integration for payment processing routes
+├── services/
+│   ├── email.js        # (Optional) Service for sending email notifications
+│   └── upload.js        # (Optional) Service for image/file uploads
+├── utils/
+│   ├── auth.js          # Middleware for JWT authentication
+│   ├── errorHandler.js  # Middleware for error handling and logging
+├── server.js           # Main server file
+├── package.json         # Project dependencies
+└── README.md           # Project documentation
+
+
+//Schemas
+
+1)User.js:
+
+Fields:
+name (string, required)
+email (string, required, unique)
+password (string, required) (Consider secure hashing)
+(Optional) address (object with additional fields like street, city, etc.)
+(Optional) phone number (string)
+References: None
+
+
+2)Product.js:
+
+Fields:
+name (string, required)
+description (string)
+price (number, required)
+images (array of strings)
+category (ObjectId, reference to Category model)
+(Optional) stock (number)
+(Optional) brand (string)
+References: Category (optional)
+
+
+
+3)Category.js (Optional):
+
+Fields:
+name (string, required, unique)
+(Optional) description (string)
+(Optional) parent category (ObjectId, reference to another Category)
+References: Parent Category (optional)
+CartItem.js:
+
+Fields:
+user (ObjectId, reference to User model)
+product (ObjectId, reference to Product model)
+quantity (number, required, default 1)
+References: User, Product
+
+4)CartItem.js:
+
+Fields:
+user (ObjectId, reference to User model)
+product (ObjectId, reference to Product model)
+quantity (number, required, default 1)
+References: User, Product
+
+
+5)Order.js:
+
+Fields:
+user (ObjectId, reference to User model)
+items (array of objects with product and quantity)
+shippingAddress (object with address details)
+paymentDetails (object with payment information)
+(Optional) order status (string)
+(Optional) tracking number (string)
+References: User, Product (through items array)
+
+
+6)Address.js (Optional):
+
+Fields:
+user (ObjectId, reference to User model) (Optional)
+name (string)
+street1 (string)
+street2 (string)
+city (string)
+state (string)
+postalCode (string)
+country (string)
+References: User (optional)
+
+
+Key Points:
+
+References are indicated by field types like ObjectId and referenced model names.
+Optional fields are mentioned in parentheses.
+Consider data validation, security, and additional fields based on your needs.
+
